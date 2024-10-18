@@ -15,3 +15,51 @@ jsconfig.json
 hugo_stats.json
 go.sum
 yarn.lock
+
+# System files
+Thumbs.db
+.DS_Store
+
+# Dependency directories
+node_modules
+
+# Build directories
+builds
+.dist
+.tmp
+.lock
+.sass-cache
+
+# Log files
+npm-debug.log
+package-lock.json
+
+# Hugo build lock
+.hugo_build.lock
+
+# Hugo generated files
+public/
+hugo_stats.json
+
+# Configuration files
+hugo.toml
+
+# Content directories
+content/
+data/
+i18n/
+
+# Static files
+static/images/
+
+# Theme directories
+themes/
+
+# Example site files
+exampleSite/.hugo_build.lock
+exampleSite/content/
+exampleSite/data/
+exampleSite/hugo.toml
+exampleSite/i18n/
+exampleSite/static/
+assets/
