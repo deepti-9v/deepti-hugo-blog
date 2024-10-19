@@ -17,19 +17,84 @@
 
 			<div class="collapse navbar-collapse" id="navigation">
 				<ul class="navbar-nav ml-auto">
-          <!-- menu active -->
-          {{ $currentPage := . }}
-          {{ range site.Menus.main }}
-          {{ $menuURL := .URL | absLangURL }}
-          {{ $pageURL:= $currentPage.Permalink | absLangURL }}
-          {{ $active := eq $menuURL $pageURL }}
-          <li class="nav-item">
-            <a class="nav-link" {{if findRE `^http` .URL}}target="_blank" rel="noopener" {{end}}
+		  <!-- menu active -->
+		  {{ $currentPage := . }}
+		  {{ range site.Menus.main }}
+		  {{ $menuURL := .URL | absLangURL }}
+		  {{ $pageURL:= $currentPage.Permalink | absLangURL }}
+		  {{ $active := eq $menuURL $pageURL }}
+		  <li class="nav-item">
+			<a class="nav-link" {{if findRE `^http` .URL}}target="_blank" rel="noopener" {{end}}
 			  href="{{if findRE `^#` .URL}}{{if not $.IsHome}}{{site.BaseURL | relLangURL}}{{end}}{{.URL}}{{else}}{{.URL | relLangURL}}{{end}}">{{if eq .Name "blog"}}{{.Name}}{{end}}</a>
-          </li>
-          {{ end }}
-        </ul>
+		  </li>
+		  {{ end }}
+		</ul>
 			</div>
 		</nav>
 	</div>
 </section>
+
+<!-- Sidebar with profile and description -->
+<aside class="sidebar" style="background-color: white; color: black;">
+	<div class="profile">
+		<img src="https://via.placeholder.com/100" alt="Profile Picture" class="profile-picture">
+		<h2 class="profile-name">Deepti Velusamy</h2>
+		<p class="profile-description">A brief description about yourself goes here. You can include your interests, profession, or any other relevant information.</p>
+	</div>
+	<hr>
+	<div class="profile">
+		<h3 class="profile-name">Skills</h3>
+		<p class="profile-description">- Programming Languages: JavaScript, Python, Java</p>
+		<p class="profile-description">- Frameworks: React, Angular, Django</p>
+		<p class="profile-description">- Tools: Git, Docker, Jenkins</p>
+	</div>
+	<hr>
+	<div class="profile">
+		<h3 class="profile-name">Projects</h3>
+		<p class="profile-description">- Project 1: Description of project 1</p>
+		<p class="profile-description">- Project 2: Description of project 2</p>
+		<p class="profile-description">- Project 3: Description of project 3</p>
+	</div>
+	<hr>
+	<div class="profile">
+		<h3 class="profile-name">Contact</h3>
+		<p class="profile-description">Email: your.email@example.com</p>
+		<p class="profile-description">LinkedIn: linkedin.com/in/yourprofile</p>
+		<p class="profile-description">GitHub: github.com/yourusername</p>
+	</div>
+</aside>
+
+<style>
+.sidebar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 250px;
+	height: 100%;
+	background-color: #e9eef3;
+	padding: 20px;
+	box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+	margin-top: 50px; /* Added margin-top for padding the upper margin */
+}
+
+.profile {
+	text-align: center;
+}
+
+.profile-picture {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	margin-bottom: 15px;
+}
+
+.profile-name {
+	font-size: 1.5em;
+	margin-bottom: 10px;
+}
+
+.profile-description {
+	font-size: 1em;
+	color: #0c0c0c;
+}
+</style>
