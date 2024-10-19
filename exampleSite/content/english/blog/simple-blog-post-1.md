@@ -7,20 +7,48 @@ author: John Doe
 description : "This is meta description"
 ---
 
-```csharp
-using System;
+## Syntax Cheat Sheet:
 
-namespace HelloWorld
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello, World!");
+
+```csharp {linenos=true}
+    HashSet<int> set = new HashSet<int>();
+    foreach(var i in nums){
+        if (!set.Contains(i)){
+            Console.WriteLine("not contains");
+            set.Add(i);
+        }
+        else {
+            return true;
         }
     }
-}
 ```
+
+```csharp {linenos=true}
+    Dictionary<char, int> mapping = new Dictionary<char, int>();
+
+    foreach(var c in s){
+        if (!mapping.ContainsKey(c)){
+            mapping.Add(c, 1);
+        }
+        else{
+            mapping[c] += 1;
+        }
+    }
+
+    foreach(KeyValuePair<char, int> entry in mapping){
+            Console.WriteLine($"char {entry.Key} count {entry.Value}")
+    }
+```
+
+
+```csharp {linenos=true}
+    int[] count = new int[26];
+    Array.Clear(count, 0, count.Length);
+```
+
+
+
+
 
 Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae. Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
 
