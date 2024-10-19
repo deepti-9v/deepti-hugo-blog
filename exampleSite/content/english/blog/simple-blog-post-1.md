@@ -10,6 +10,7 @@ description : "This is meta description"
 ## Syntax Cheat Sheet:
 
 
+## HashSet
 ```csharp {linenos=true}
     HashSet<int> set = new HashSet<int>();
     foreach(var i in nums){
@@ -23,6 +24,7 @@ description : "This is meta description"
     }
 ```
 
+## Dictionary
 ```csharp {linenos=true}
     Dictionary<char, int> mapping = new Dictionary<char, int>();
 
@@ -40,13 +42,28 @@ description : "This is meta description"
     }
 ```
 
-
-```csharp {linenos=true}
-    int[] count = new int[26];
-    Array.Clear(count, 0, count.Length);
+## Array
+```csharp
+   int array[] = new int[];
+   Array.Clear(array);
+   Array.Clear(array, 0, array.Length);
 ```
 
 
+
+## Convert Dictionary to Array
+
+```csharp {linenos=true}
+    Dictionary<string, List<string>> map = new Dictionary<string, List<string>>();
+    map.Values.ToList<List<string>>(); //Its a list of List<string>
+```
+
+## Priority queue
+```csharp {linenos=true}
+var heap = new PriorityQueue<int, int>();
+heap.Enqueue(1,2);
+heap.Dequeue();
+```
 
 
 
