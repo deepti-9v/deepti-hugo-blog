@@ -2,11 +2,13 @@
 	<div class="container">
 		<nav class="navbar navbar-expand-lg navbar-dark">
 			<a class="navbar-brand p-0" href="{{ .Site.BaseURL | relLangURL }}">
-				{{ if site.Params.logo }}
+				<!-- Commenting for now -->
+				<!-- {{ if site.Params.logo }}
 				<img class="lozad" data-src="{{ site.Params.logo | absURL }}" alt="{{ .Site.Title }}" height="42">
 				{{ else }}
 				{{ site.Title }}
-				{{ end }}
+				{{ end }} -->
+				<span style="font-family: 'Quattrocento Sans', sans-serif; font-weight: bold;">DEEPTI</span>
 			</a>
 
 			<button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation">
@@ -21,27 +23,10 @@
           {{ $menuURL := .URL | absLangURL }}
           {{ $pageURL:= $currentPage.Permalink | absLangURL }}
           {{ $active := eq $menuURL $pageURL }}
-          {{ if .HasChildren }}
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false">
-              {{ .Name }}
-            </a>
-            <div class="dropdown-menu">
-              {{ range .Children }}
-              {{ $childURL := .URL | absLangURL }}
-              {{ $active := eq $childURL $pageURL }}
-              <a class="dropdown-item" {{if findRE `^http` .URL}}target="_blank" rel="noopener" {{end}}
-                href="{{if findRE `^#` .URL}}{{if not $.IsHome}}{{site.BaseURL | relLangURL}}{{end}}{{.URL}}{{else}}{{.URL | relLangURL}}{{end}}">{{ .Name }}</a>
-              {{ end }}
-            </div>
-          </li>
-          {{ else }}
           <li class="nav-item">
             <a class="nav-link" {{if findRE `^http` .URL}}target="_blank" rel="noopener" {{end}}
-              href="{{if findRE `^#` .URL}}{{if not $.IsHome}}{{site.BaseURL | relLangURL}}{{end}}{{.URL}}{{else}}{{.URL | relLangURL}}{{end}}">{{.Name}}</a>
+			  href="{{if findRE `^#` .URL}}{{if not $.IsHome}}{{site.BaseURL | relLangURL}}{{end}}{{.URL}}{{else}}{{.URL | relLangURL}}{{end}}">{{if eq .Name "blog"}}{{.Name}}{{end}}</a>
           </li>
-          {{ end }}
           {{ end }}
         </ul>
 			</div>
